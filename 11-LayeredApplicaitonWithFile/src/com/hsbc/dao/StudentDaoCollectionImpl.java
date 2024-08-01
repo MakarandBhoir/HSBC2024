@@ -2,8 +2,8 @@ package com.hsbc.dao;
 
 import com.hsbc.model.Student;
 
-public class StudentDaoArrayImpl implements StudentDao{
-    private static Student db[] = new Student[10];
+public class StudentDaoCollectionImpl implements StudentDao{
+    private static Student db[] = new Student[5];
     private static int index = -1;
     static {
         db[++index] = new Student(1001, "Anjali", 70);
@@ -14,16 +14,6 @@ public class StudentDaoArrayImpl implements StudentDao{
     @Override
     public boolean createStudent(Student student) {
         if(index < db.length-1){
-            Student result = null;
-            try {
-                result = readStudentByStudentId(student.getStudentId());
-            }
-            catch (IllegalArgumentException e){
-
-            }
-            if(result != null){
-                throw new IllegalArgumentException("Student ["+student.getStudentId()+"] is already present.");
-            }
             db[++index] = student;
             return true;
         }else {
@@ -34,13 +24,10 @@ public class StudentDaoArrayImpl implements StudentDao{
     public Student readStudentByStudentId(int studentId) {
         Student result = null;
         for (Student student : db){
-            if(student != null && student.getStudentId() == studentId){
+            if(student.getStudentId() == studentId){
                 result = student;
                 break;
             }
-        }
-        if(result == null){
-            throw new IllegalArgumentException(studentId+" not found.");
         }
         return result;
     }

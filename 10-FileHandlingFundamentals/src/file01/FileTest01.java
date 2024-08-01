@@ -1,0 +1,30 @@
+package file01;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileTest01 {
+    public void readFile(String fileName) throws FileNotFoundException, IOException {
+        File file = new File(fileName);
+        FileInputStream fis = new FileInputStream(file);
+        int ch;
+        while((ch = fis.read()) != -1){
+            System.out.print( (char) ch );
+        }
+    }
+    public static void main(String[] args) {
+        try {
+            //String fileName = "D:\\Training\\HSBC\\Batch3\\Core Java\\test\\file.txt";
+            String fileName = "D:/Training/HSBC/Batch3/Core Java/test/file.txt";
+            new FileTest01().readFile(fileName);
+        }
+        catch(FileNotFoundException e){
+            System.out.println("File not found.");
+        }
+        catch (IOException e){
+            System.out.println("Problem reading file.");
+        }
+    }
+}

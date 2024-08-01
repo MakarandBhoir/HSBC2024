@@ -2,15 +2,15 @@ package com.hsbc.dao;
 
 import com.hsbc.model.Student;
 
-public class StudentDaoArrayImpl implements StudentDao{
+public class StudentDaoFileImpl implements StudentDao{
+
     private static Student db[] = new Student[10];
     private static int index = -1;
-    static {
-        db[++index] = new Student(1001, "Anjali", 70);
-        db[++index] = new Student(1002, "Nishta", 82);
-        db[++index] = new Student(1003, "Shraddha", 83);
-        db[++index] = new Student(1004, "Shaurya", 80);
+
+    public void setDb(Student db[]){
+        StudentDaoFileImpl.db = db;
     }
+
     @Override
     public boolean createStudent(Student student) {
         if(index < db.length-1){
