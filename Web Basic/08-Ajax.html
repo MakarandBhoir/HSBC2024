@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Page</title>
+    <script src="08-Ajax.js"></script>
+</head>
+
+<body>
+    <form>
+        <label for="studentId">Student Id</label>
+        <select name="studentId" id="studentId" onchange="populateData()">
+            <option value="-1">Select Id</option>
+            <option value="1001">1001</option>
+            <option value="1002">1002</option>
+            <option value="1003">1003</option>
+            <option value="1004">1004</option>
+            <option value="1005">1005</option>
+        </select>
+        <br>
+        <label for="studentName">Student Name</label>
+        <input type="text" name="studentName" id="studentName">
+        <br>
+        <label for="studentScore">Student Score</label>
+        <input type="text" name="studentScore" id="studentScore">
+        <br>
+        <input type="button" value="Add Student">
+    </form>
+</body>
+
+</html>

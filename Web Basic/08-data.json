@@ -1,0 +1,22 @@
+[
+    {
+        "studentId": 1001,
+        "studentName": "Pallav"
+    },
+    {
+        "studentId": 1002,
+        "studentName": "Siddhart"
+    },
+    {
+        "studentId": 1003,
+        "studentName": "Janavi"
+    },
+    {
+        "studentId": 1004,
+        "studentName": "Tanmay"
+    },
+    {
+        "studentId": 1005,
+        "studentName": "Achyuta"
+    }
+]

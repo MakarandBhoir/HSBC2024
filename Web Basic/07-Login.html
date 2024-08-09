@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="07-Login.js"></script>
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <form action="05-Home.html" method="get" id="loginForm" onsubmit="validateForm(event)">
+        <table>
+            <tr>
+                <td><label for="username">Username</label></td>
+                <td><input type="text" name="username" id="username"></td>
+                <td id="usernameError" style="color: red;"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="text" name="password" id="password"></td>
+                <td id="passwordError" style="color: red;"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Login</button></td>
+            </tr>
+        </table>
+    </form>
+    <div id="result"></div>
+</body>
+
+</html>
