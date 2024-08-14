@@ -6,17 +6,13 @@ import com.hsbc.factory.StudentDaoFactory;
 import com.hsbc.model.Student;
 import com.hsbc.service.StudentService;
 import com.hsbc.service.StudentServiceImpl;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Collection;
 import java.util.Scanner;
 
 public class UI {
-    private static final Logger logger = LogManager.getLogger();
     private static StudentServiceImpl service = null;
     static {
-        logger.info("Log test....");
         service = new StudentServiceImpl();
     }
     public static void main(String[] args) {
