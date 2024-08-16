@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="student" class="com.hsbc.model.Student" scope="prototype">
+        <constructor-arg name="studentId" value="10101"/>
+        <constructor-arg name="studentName" value="Tushar"/>
+        <constructor-arg name="studentScore" value="60"/>
+        <constructor-arg name="dept" ref="dept"/>
+<!--        <property name="dept" ref="dept"/>-->
+    </bean>
+    <bean id="student2" class="com.hsbc.model.Student" scope="prototype" autowire="byName">
+        <constructor-arg name="studentId" value="10101"/>
+        <constructor-arg name="studentName" value="Tushar"/>
+        <constructor-arg name="studentScore" value="60"/>
+    </bean>
+    <bean id="student3" class="com.hsbc.model.Student" scope="prototype" autowire="byType">
+        <constructor-arg name="studentId" value="10101"/>
+        <constructor-arg name="studentName" value="Tushar"/>
+        <constructor-arg name="studentScore" value="60"/>
+    </bean>
+    <bean id="student4" class="com.hsbc.model.Student" scope="prototype" autowire="constructor">
+        <constructor-arg name="studentId" value="10101"/>
+        <constructor-arg name="studentName" value="Tushar"/>
+        <constructor-arg name="studentScore" value="60"/>
+    </bean>
+
+    <bean id="dept" class="com.hsbc.model.Department" scope="prototype">
+        <property name="deptId" value="10"></property>
+        <property name="deptName" value="Information Technology"/>
+    </bean>
+
+<!--    <bean id="dept2" class="com.hsbc.model.Department" scope="prototype">-->
+<!--        <property name="deptId" value="10"></property>-->
+<!--        <property name="deptName" value="Information Technology"/>-->
+<!--    </bean>-->
+</beans>
