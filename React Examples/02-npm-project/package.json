@@ -1,0 +1,19 @@
+{
+  "name": "02-npm-project",
+  "version": "1.0.0",
+  "description": "This is my first package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "makarand": "node index"
+  },
+  "author": "Makrand Bhoir",
+  "license": "ISC",
+  "dependencies": {
+    "makarand-dummy-web-server": "0.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
